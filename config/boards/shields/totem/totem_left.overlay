@@ -6,6 +6,19 @@
 
 #include "totem.dtsi"
 
+/ {
+  aliases {
+    led0 = &user_led;
+  };
+};
+
+&gpio0 {
+  user_led: user_led {
+    gpios = <&gpio0 26 GPIO_ACTIVE_LOW>;
+    label = "Red LED";
+  };
+};
+
 &kscan0 {
     col-gpios
         = <&xiao_d 4 GPIO_ACTIVE_HIGH>
